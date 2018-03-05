@@ -71,6 +71,14 @@ type Activity struct {
 	WebURL string `json:"webUrl"`
 
 	ViewCount int64 `json:"viewCount"`
+
+	Status int64 `json:"status"`
+
+	JoinedCount int64 `json:"joinedCount"`
+
+	FavCount int64 `json:"favCount"`
+
+	PraiseCount int64 `json:"praiseCount"`
 }
 
 // Validate validates this activity

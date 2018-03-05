@@ -7,8 +7,14 @@ package activity
 
 import (
 	"net/http"
-
+	_"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 	middleware "github.com/go-openapi/runtime/middleware"
+	"youbite/models"
+	"fmt"
+	"youbite/var"
+	_"strconv"
+	"time"
 )
 
 // NrActivityJoinHandlerFunc turns a function with the right signature into a activity join handler
@@ -53,8 +59,50 @@ func (o *NrActivityJoin) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	res := o.Handler.Handle(Params) // actually handle the request
+	var ok ActivityJoinOK
+	var response models.InlineResponse2002
+	//var activityList models.InlineResponse2004Orders
+	//var count int64
 
-	o.Context.Respond(rw, r, route.Produces, route, res)
+	db,err := _var.OpenConnection()
+	if err!=nil{
+		fmt.Println(err.Error())
+	}
+	defer db.Close()
+	//先查询活动是否需要费用
+	var activity models.Activity
+	var msg string
+	var code int64
+	msg = "收藏成功"
+	code = 200
+	db.Raw("select * from activities where id=?",Params.ActivityID).First(&activity)
+	if activity.ID!=0{
+		if(activity.Price>0 ){
+			if(activity.PriceUnit==0)  { //人民币单位
+
+			}else if(activity.PriceUnit==1) { //积分
+
+			}
+		}else{
+            db.Exec("insert into activities(activityId,memberId,time) values(?,?,?)",Params.ActivityID,Params.MemberID,time.Now().UnixNano()/1000000)
+
+		}
+	}
+	//query
+	//db.Table("recharge").Where(map[string]interface{}{"status":0}).Find(&rechargeList).Limit(*(Params.PageSize)).Offset(*(Params.PageIndex)*(*(Params.PageSize)))
+	//db.Table("activities").Limit(*(Params.PageSize)).Offset(*(Params.PageIndex)*(*(Params.PageSize))).Find(&activityList)
+	//db.Table("msgs").Where("status=?",0).Count(&count)
+	//data
+	//response.Activities = activityList
+	//fmt.Println("haspushed is",albumList[0].HasPushed)
+	//status
+	var status models.Response
+	status.UnmarshalBinary([]byte(_var.Response200(code,msg)))
+	response.Status = &status
+	//response.Status.TotalCount = count
+
+	ok.SetPayload(&response)
+
+	o.Context.Respond(rw, r, route.Produces, route, ok)
 
 }
