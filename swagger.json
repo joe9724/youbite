@@ -1,0 +1,6497 @@
+﻿{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Youbite(Api)",
+    "version" : "1.0.0",
+    "title" : "Youbite(Api)",
+    "contact" : {
+      "email" : "64060764@qq.com"
+    }
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/nanjingyouzi/YoubiteApi/1.0.0",
+  "tags" : [ {
+    "name" : "Category",
+    "description" : "商品大类管理"
+  }, {
+    "name" : "Goods",
+    "description" : "商品管理"
+  }, {
+    "name" : "Banner",
+    "description" : "Banner管理"
+  }, {
+    "name" : "Msg",
+    "description" : "消息管理"
+  }, {
+    "name" : "Relation",
+    "description" : "映射关系管理"
+  }, {
+    "name" : "Member",
+    "description" : "App用户管理"
+  }, {
+    "name" : "Feedback",
+    "description" : "用户反馈管理"
+  }, {
+    "name" : "reportErr",
+    "description" : "上报错误管理"
+  }, {
+    "name" : "Community",
+    "description" : "圈子"
+  }, {
+    "name" : "Topic",
+    "description" : "话题"
+  }, {
+    "name" : "Shuoshuo",
+    "description" : "说说"
+  }, {
+    "name" : "Activity",
+    "description" : "活动"
+  }, {
+    "name" : "Water",
+    "description" : "流水"
+  }, {
+    "name" : "SKU",
+    "description" : "商品规格设计"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/activity/tag/list" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "获取活动tag列表(含条件检索)",
+        "description" : "获取活动tag列表(含条件检索)",
+        "operationId" : "/activity/tag/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "tag",
+          "in" : "query",
+          "description" : "活动tag",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "tagId",
+          "in" : "query",
+          "description" : "tagid",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "lat",
+          "in" : "query",
+          "description" : "可用于搜索",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "lon",
+          "in" : "query",
+          "description" : "可用于搜索",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取tag列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/tag/detail" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "活动Tag详情",
+        "description" : "活动tag详情",
+        "operationId" : "/activity/tag/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "tagId",
+          "in" : "query",
+          "description" : "tagid",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "tag详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_1"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/tag/delete" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "活动Tag详情",
+        "description" : "活动tag详情",
+        "operationId" : "/activity/tag/delete",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "tagId",
+          "in" : "query",
+          "description" : "tagid",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "tag详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/tag/upload" : {
+      "post" : {
+        "tags" : [ "Activity" ],
+        "summary" : "添加一个活动标签",
+        "operationId" : "activity/tag/upload",
+        "consumes" : [ "multipart/form-data" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "formData",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "icon",
+          "in" : "formData",
+          "description" : "The file to upload.",
+          "required" : false,
+          "type" : "file"
+        }, {
+          "name" : "cover",
+          "in" : "formData",
+          "description" : "The file to upload.",
+          "required" : false,
+          "type" : "file"
+        }, {
+          "name" : "title",
+          "in" : "formData",
+          "description" : "Description of file contents.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "subTitle",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "summary",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "content",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "添加活动成功，返回成功信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/tag/edit" : {
+      "post" : {
+        "tags" : [ "Activity" ],
+        "summary" : "修改一个活动标签",
+        "operationId" : "activity/tag/edit",
+        "consumes" : [ "multipart/form-data" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "formData",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "icon",
+          "in" : "formData",
+          "description" : "The file to upload.",
+          "required" : false,
+          "type" : "file"
+        }, {
+          "name" : "cover",
+          "in" : "formData",
+          "description" : "The file to upload.",
+          "required" : false,
+          "type" : "file"
+        }, {
+          "name" : "title",
+          "in" : "formData",
+          "description" : "Description of file contents.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "subTitle",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "summary",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "content",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "添加活动成功，返回成功信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/edit" : {
+      "post" : {
+        "tags" : [ "Activity" ],
+        "summary" : "修改活动",
+        "operationId" : "activity/edit/",
+        "consumes" : [ "multipart/form-data" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "formData",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "icon",
+          "in" : "formData",
+          "description" : "The file to upload.",
+          "required" : false,
+          "type" : "file"
+        }, {
+          "name" : "cover",
+          "in" : "formData",
+          "description" : "The file to upload.",
+          "required" : false,
+          "type" : "file"
+        }, {
+          "name" : "title",
+          "in" : "formData",
+          "description" : "Description of file contents.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "subTitle",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "summary",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "content",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "priceValue",
+          "in" : "formData",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "tag",
+          "in" : "formData",
+          "description" : "活动形式 如 （1|2|3）户外|比赛|运动",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "area",
+          "in" : "formData",
+          "description" : "活动区域",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "startDate",
+          "in" : "formData",
+          "description" : "活动开始时间戳",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endDate",
+          "in" : "formData",
+          "description" : "活动结束时间戳",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "limit",
+          "in" : "formData",
+          "description" : "活动最多报名人数",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "添加活动成功，返回成功信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/upload" : {
+      "post" : {
+        "tags" : [ "Activity" ],
+        "summary" : "添加一个活动",
+        "operationId" : "activity/upload/",
+        "consumes" : [ "multipart/form-data" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "formData",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "icon",
+          "in" : "formData",
+          "description" : "The file to upload.",
+          "required" : false,
+          "type" : "file"
+        }, {
+          "name" : "cover",
+          "in" : "formData",
+          "description" : "The file to upload.",
+          "required" : false,
+          "type" : "file"
+        }, {
+          "name" : "title",
+          "in" : "formData",
+          "description" : "Description of file contents.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "subTitle",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "summary",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "content",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "priceValue",
+          "in" : "formData",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "tag",
+          "in" : "formData",
+          "description" : "活动形式 如 （1|2|3）户外|比赛|运动",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "area",
+          "in" : "formData",
+          "description" : "活动区域",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "startDate",
+          "in" : "formData",
+          "description" : "活动开始时间戳",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endDate",
+          "in" : "formData",
+          "description" : "活动结束时间戳",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "limit",
+          "in" : "formData",
+          "description" : "活动最多报名人数",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "添加活动成功，返回成功信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/list" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "获取活动列表(含条件检索)",
+        "description" : "获取活动列表(含条件检索)",
+        "operationId" : "/activity/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "keyword",
+          "in" : "query",
+          "description" : "说说模糊匹配(可模糊检索)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "lat",
+          "in" : "query",
+          "description" : "可用于搜索",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "lon",
+          "in" : "query",
+          "description" : "可用于搜索",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_4"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/list/suggest" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "获取推荐活动列表(含条件检索)",
+        "description" : "获取推荐活动列表(含条件检索)",
+        "operationId" : "/activity/list/suggest",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "keyword",
+          "in" : "query",
+          "description" : "说说模糊匹配(可模糊检索)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "lat",
+          "in" : "query",
+          "description" : "可用于搜索",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "lon",
+          "in" : "query",
+          "description" : "可用于搜索",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_4"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/list/joined" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "获取参加的活动列表(含条件检索)",
+        "description" : "获取参加的活动列表(含条件检索)",
+        "operationId" : "/activity/list/joined",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "keyword",
+          "in" : "query",
+          "description" : "说说模糊匹配(可模糊检索)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "lat",
+          "in" : "query",
+          "description" : "可用于搜索",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "lon",
+          "in" : "query",
+          "description" : "可用于搜索",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "我参加的活动列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_4"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/list/fav" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "获取收藏的活动列表(含条件检索)",
+        "description" : "获取收藏的活动列表(含条件检索)",
+        "operationId" : "/activity/list/fav",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "keyword",
+          "in" : "query",
+          "description" : "说说模糊匹配(可模糊检索)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "lat",
+          "in" : "query",
+          "description" : "可用于搜索",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "lon",
+          "in" : "query",
+          "description" : "可用于搜索",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "我参加的活动列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_4"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/list/praise" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "获取活动的点赞列表(含条件检索)",
+        "description" : "获取活动的点赞列表(含条件检索)",
+        "operationId" : "/activity/list/praise",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "当前用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "keyword",
+          "in" : "query",
+          "description" : "说说模糊匹配(可模糊检索)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "lat",
+          "in" : "query",
+          "description" : "可用于搜索",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "lon",
+          "in" : "query",
+          "description" : "可用于搜索",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_5"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/detail" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "活动详情",
+        "description" : "活动详情",
+        "operationId" : "/activity/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "活动详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_6"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/joined/memberList" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "活动报名会员列表",
+        "description" : "活动报名会员列表",
+        "operationId" : "/activity/joined/memberList",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "活动报名会员列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_7"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/delete" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "删除活动",
+        "description" : "删除活动",
+        "operationId" : "/activity/delete",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "活动详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/join" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "参加活动",
+        "description" : "参加活动",
+        "operationId" : "/activity/join",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id类型",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "结果",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/fav" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "收藏活动",
+        "description" : "参加活动",
+        "operationId" : "/activity/fav",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id类型",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "结果",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/praise" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "点赞活动",
+        "description" : "参加活动",
+        "operationId" : "/activity/praise",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id类型",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "结果",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/shuoshuo/comment/list" : {
+      "get" : {
+        "tags" : [ "Shuoshuo" ],
+        "summary" : "获取说说下评论列表(含条件检索)",
+        "description" : "获取说说下评论列表(含条件检索)",
+        "operationId" : "/shuoshuo/comment/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "统计开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "统计结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "shuoshuoId",
+          "in" : "query",
+          "description" : "说说id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "shuoshuoKey",
+          "in" : "query",
+          "description" : "说说模糊匹配(可模糊检索)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "commentId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "lat",
+          "in" : "query",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "lon",
+          "in" : "query",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_8"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/shuoshuo/comment/detail" : {
+      "get" : {
+        "tags" : [ "Shuoshuo" ],
+        "summary" : "说说下评论详情",
+        "description" : "说说下评论详情",
+        "operationId" : "/shuoshuo/comment/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "commentId",
+          "in" : "query",
+          "description" : "评论id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "评论详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_9"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/shuoshuo/list" : {
+      "get" : {
+        "tags" : [ "Shuoshuo" ],
+        "summary" : "获取说说列表(含条件检索)",
+        "description" : "获说说列表",
+        "operationId" : "shuoshuo/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "统计开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "统计结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "shuoshuoId",
+          "in" : "query",
+          "description" : "说说id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "shuoshuoKey",
+          "in" : "query",
+          "description" : "说说模糊匹配(可模糊检索)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "lat",
+          "in" : "query",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "lon",
+          "in" : "query",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_8"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/shuoshuo/detail" : {
+      "get" : {
+        "tags" : [ "Shuoshuo" ],
+        "summary" : "说说详情",
+        "description" : "说说详情",
+        "operationId" : "/shuoshuo/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "shuoshuoId",
+          "in" : "query",
+          "description" : "说说id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "话题详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_10"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/topic/list" : {
+      "get" : {
+        "tags" : [ "Topic" ],
+        "summary" : "获取话题列表(含条件检索)",
+        "description" : "获取圈子列表",
+        "operationId" : "topic/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "统计开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "统计结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "communityId",
+          "in" : "query",
+          "description" : "圈子id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberName",
+          "in" : "query",
+          "description" : "圈子名(可模糊检索)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "lat",
+          "in" : "query",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "lon",
+          "in" : "query",
+          "required" : false,
+          "type" : "number"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_11"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/topic/detail" : {
+      "get" : {
+        "tags" : [ "Topic" ],
+        "summary" : "话题详情",
+        "description" : "话题详情",
+        "operationId" : "/topic/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "topicId",
+          "in" : "query",
+          "description" : "话题id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "话题详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_12"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/community/list" : {
+      "get" : {
+        "tags" : [ "Community" ],
+        "summary" : "获取圈子列表(含条件检索)",
+        "description" : "获取圈子列表",
+        "operationId" : "community/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "统计开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "统计结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "communityId",
+          "in" : "query",
+          "description" : "圈子id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberName",
+          "in" : "query",
+          "description" : "圈子名(可模糊检索)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_8"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/community/detail" : {
+      "get" : {
+        "tags" : [ "Community" ],
+        "summary" : "圈子详情",
+        "description" : "圈子详情",
+        "operationId" : "/community/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "communityId",
+          "in" : "query",
+          "description" : "圈子id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "圈子详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_13"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/loginByThirdParty" : {
+      "post" : {
+        "tags" : [ "Member" ],
+        "summary" : "第三方登录",
+        "description" : "第三方登录",
+        "operationId" : "/member/loginByThirdParty",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "第三方登录",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/body"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "上报错误返回",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_14"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/recharge/list" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "获取充值列表(含条件检索)",
+        "description" : "获取充值列表",
+        "operationId" : "member/recharge/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "payType",
+          "in" : "query",
+          "description" : "支付类型 0是支付宝 1是微信 2是银联 3是applay 4是其他",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "orderNo",
+          "in" : "query",
+          "description" : "流水号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "统计开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "统计结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "会员id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "albumName",
+          "in" : "query",
+          "description" : "检索时模糊查询使用",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "description" : "时间戳(参与加密)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_15"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/order/list" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "获取订单列表(含条件检索)",
+        "description" : "获取订单列表",
+        "operationId" : "member/order/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "payType",
+          "in" : "query",
+          "description" : "支付类型 0是支付宝 1是微信 2是银联 3是applay 4是其他",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "orderNo",
+          "in" : "query",
+          "description" : "订单编号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "统计开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "统计结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "买书人id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "albumName",
+          "in" : "query",
+          "description" : "检索时模糊查询使用",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "description" : "时间戳(参与加密)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_16"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/order/serialNuber" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "充值订单产生流水号",
+        "description" : "充值订单产生流水号",
+        "operationId" : "/order/serialNuber",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "充值订单产生流水号",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/body_1"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "上报错误返回",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_14"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/checkRecharge" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "检查是否充值成功",
+        "description" : "检查是否充值成功",
+        "operationId" : "/member/checkRecharge",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "serialNumber",
+          "in" : "query",
+          "description" : "充值流水号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_17"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/delete" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "冻结会员",
+        "description" : "冻结会员",
+        "operationId" : "/member/delete",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "会员id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "冻结会员结果",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/detail" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "会员详情",
+        "description" : "会员详情",
+        "operationId" : "member/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "会员id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "会员详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_18"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/list" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "获取会员列表(含条件检索)",
+        "description" : "获取会员列表",
+        "operationId" : "member/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "统计开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "统计结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "会员id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberName",
+          "in" : "query",
+          "description" : "会员名(可模糊检索)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_5"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/attention/list" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "获取xx会员关注的人列表(含条件检索)",
+        "description" : "获取会员关注的人列表",
+        "operationId" : "/member/attention/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "统计开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "统计结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "会员id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberName",
+          "in" : "query",
+          "description" : "会员名(可模糊检索)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_5"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/fans/list" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "获取关注xx会员的人列表(含条件检索)",
+        "description" : "获取关注xx会员的人列表",
+        "operationId" : "/member/fans/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "统计开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "统计结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "会员id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberName",
+          "in" : "query",
+          "description" : "会员名(可模糊检索)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_5"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/feedback" : {
+      "post" : {
+        "tags" : [ "Member" ],
+        "summary" : "反馈",
+        "description" : "反馈",
+        "operationId" : "feedback",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "意见反馈",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/body_2"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "上报错误返回",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/reportErr" : {
+      "post" : {
+        "tags" : [ "Member" ],
+        "summary" : "页面报错(备用)",
+        "description" : "页面报错",
+        "operationId" : "/member/reportErr",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "report ERR to server",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/body_3"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "上报错误返回",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/scanCode" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "扫码",
+        "description" : "扫码",
+        "operationId" : "/member/scanCode",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "codeUrl",
+          "in" : "query",
+          "description" : "二维码中的url",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "extraInfo",
+          "in" : "query",
+          "description" : "额外信息",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "扫码后服务端返回结果",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/register/sendSms" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "下发注册时的验证码",
+        "description" : "下发注册时的验证码",
+        "operationId" : "/member/register/sendSms",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phoneNumber",
+          "in" : "query",
+          "description" : "登录所用手机号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "description" : "时间戳(加密串要用到,供服务端验证，简单防刷)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/findPass/sendSms" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "下发找回密码时的验证码",
+        "description" : "下发找回密码时的验证码",
+        "operationId" : "findPass/sendSms",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phoneNumber",
+          "in" : "query",
+          "description" : "登录所用手机号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "description" : "时间戳(加密串要用到,供服务端验证，简单防刷)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/findPass/editPass" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "修改密码",
+        "description" : "修改密码",
+        "operationId" : "findPass/editPass",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phoneNumber",
+          "in" : "query",
+          "description" : "登录所用手机号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "description" : "时间戳(加密串要用到,供服务端验证，简单防刷)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "newPass",
+          "in" : "query",
+          "description" : "新密码",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "oldPass",
+          "in" : "query",
+          "description" : "老密码",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "type",
+          "in" : "query",
+          "description" : "0=修改密码 1=找回密码",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "extraInfo1",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/login" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "登录接口",
+        "description" : "登录接口",
+        "operationId" : "login",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phone",
+          "in" : "query",
+          "description" : "登录名",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "loginType",
+          "in" : "query",
+          "description" : "登录方式,0代表密码登陆,1代表快捷登录",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "password",
+          "in" : "query",
+          "description" : "登录密码,",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "smsCode",
+          "in" : "query",
+          "description" : "快捷登录时上传smsCode,password留空",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_18"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/startUp" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "启动页接口",
+        "description" : "启动页接口",
+        "operationId" : "/startUp",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria",
+            "schema" : {
+              "$ref" : "#/definitions/InitModel"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/register" : {
+      "post" : {
+        "tags" : [ "Member" ],
+        "summary" : "注册接口",
+        "description" : "注册接口",
+        "operationId" : "/member/register",
+        "consumes" : [ "multipart/form-data" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "formData",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "formData",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "formData",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "Membername",
+          "in" : "formData",
+          "description" : "登录名",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "password",
+          "in" : "formData",
+          "description" : "密码",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "validateCode",
+          "in" : "formData",
+          "description" : "短信验证码",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phoneNumber",
+          "in" : "formData",
+          "description" : "手机号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "birth-year",
+          "in" : "formData",
+          "description" : "出生年",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "birth-month",
+          "in" : "formData",
+          "description" : "出生月",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "birth-day",
+          "in" : "formData",
+          "description" : "出生日",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "grade",
+          "in" : "formData",
+          "description" : "年级",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "avatarPath",
+          "in" : "formData",
+          "description" : "头像路径",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/edit" : {
+      "post" : {
+        "tags" : [ "Member" ],
+        "summary" : "修改用户资料",
+        "description" : "修改用户资料",
+        "operationId" : "/member/edit",
+        "consumes" : [ "multipart/form-data" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "formData",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "formData",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "formData",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "Membername",
+          "in" : "formData",
+          "description" : "登录名",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "password",
+          "in" : "formData",
+          "description" : "密码",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "validateCode",
+          "in" : "formData",
+          "description" : "短信验证码",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phoneNumber",
+          "in" : "formData",
+          "description" : "手机号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "birth-year",
+          "in" : "formData",
+          "description" : "出生年",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "birth-month",
+          "in" : "formData",
+          "description" : "出生月",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "birth-day",
+          "in" : "formData",
+          "description" : "出生日",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int644"
+        }, {
+          "name" : "avatarPath",
+          "in" : "formData",
+          "description" : "头像路径",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "formData",
+          "description" : "时间戳",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "formData",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "操作成功",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/order/detail" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "订单详情",
+        "description" : "订单详情",
+        "operationId" : "member/order/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "orderId",
+          "in" : "query",
+          "description" : "订单id",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "订单详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_19"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/feedback/list" : {
+      "get" : {
+        "tags" : [ "Feedback" ],
+        "summary" : "获取反馈列表",
+        "description" : "获取反馈列表",
+        "operationId" : "feedback/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_20"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/feedback/detail" : {
+      "get" : {
+        "tags" : [ "Feedback" ],
+        "summary" : "反馈详情",
+        "description" : "反馈详情",
+        "operationId" : "feedback/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "feedbackId",
+          "in" : "query",
+          "description" : "反馈id",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "反馈详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_21"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/reportErr/list" : {
+      "get" : {
+        "tags" : [ "reportErr" ],
+        "summary" : "报错列表",
+        "description" : "报错列表",
+        "operationId" : "reportErr/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_22"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/reportErr/detail" : {
+      "get" : {
+        "tags" : [ "reportErr" ],
+        "summary" : "报错详情",
+        "description" : "报错详情",
+        "operationId" : "reportErr/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "feedbackId",
+          "in" : "query",
+          "description" : "反馈id",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "报错详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_23"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/banner/list" : {
+      "get" : {
+        "tags" : [ "Banner" ],
+        "summary" : "Banner列表",
+        "description" : "Banner列表",
+        "operationId" : "banner/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Banner列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_24"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/banner/detail" : {
+      "get" : {
+        "tags" : [ "Banner" ],
+        "summary" : "Banner详情",
+        "description" : "Banner详情",
+        "operationId" : "banner/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "bannerId",
+          "in" : "query",
+          "description" : "Bannerid",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "banner详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_25"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/msg/unsend/list" : {
+      "get" : {
+        "tags" : [ "Msg" ],
+        "summary" : "未发送消息列表",
+        "description" : "未发送消息列表",
+        "operationId" : "msg/unsend/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "to",
+          "in" : "query",
+          "description" : "某人id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "from",
+          "in" : "query",
+          "description" : "某人id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "已发送消息列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_26"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/msg/send/list" : {
+      "get" : {
+        "tags" : [ "Msg" ],
+        "summary" : "已发送消息列表",
+        "description" : "已发送消息列表",
+        "operationId" : "msg/send/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "to",
+          "in" : "query",
+          "description" : "某人id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "from",
+          "in" : "query",
+          "description" : "某人id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "已发送消息列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_26"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/msg/detail" : {
+      "get" : {
+        "tags" : [ "Msg" ],
+        "summary" : "Msg详情",
+        "description" : "Msg详情",
+        "operationId" : "msg/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "msgId",
+          "in" : "query",
+          "description" : "消息id",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "消息详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_27"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/category/list" : {
+      "get" : {
+        "tags" : [ "Category" ],
+        "summary" : "大类列表",
+        "description" : "大类列表",
+        "operationId" : "/category/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "parentId",
+          "in" : "query",
+          "description" : "父id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_28"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/category/detail" : {
+      "get" : {
+        "tags" : [ "Category" ],
+        "summary" : "分类详情",
+        "description" : "分类详情",
+        "operationId" : "category/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "categoryId",
+          "in" : "query",
+          "description" : "分类id",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "分类详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_29"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/goods/detail" : {
+      "get" : {
+        "tags" : [ "Goods" ],
+        "summary" : "商品详情",
+        "description" : "商品详情",
+        "operationId" : "goods/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "goodsId",
+          "in" : "query",
+          "description" : "商品id",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "商品详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_30"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/goods/delete" : {
+      "get" : {
+        "tags" : [ "Goods" ],
+        "summary" : "删除商品",
+        "description" : "删除商品",
+        "operationId" : "goods/delete",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "goodsId",
+          "in" : "query",
+          "description" : "商品id",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "商品详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/goods/list" : {
+      "get" : {
+        "tags" : [ "Goods" ],
+        "summary" : "获取商品列表",
+        "description" : "获取商品列表",
+        "operationId" : "goods/list/",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "categoryid",
+          "in" : "query",
+          "description" : "类id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取商品列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_31"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/goods/spec/list" : {
+      "get" : {
+        "tags" : [ "Goods" ],
+        "summary" : "获取商品规格列表",
+        "description" : "获取商品规格列表",
+        "operationId" : "/goods/spec/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "goodsId",
+          "in" : "query",
+          "description" : "商品id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取商品列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_32"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/goods/spec/detail" : {
+      "get" : {
+        "tags" : [ "Goods" ],
+        "summary" : "商品规格详情",
+        "description" : "商品规格详情",
+        "operationId" : "/goods/spec/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登录id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "specId",
+          "in" : "query",
+          "description" : "规格id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "商品规格详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_33"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/relation/subCategory/goodsList" : {
+      "get" : {
+        "tags" : [ "Relation" ],
+        "summary" : "获取子类下商品集合",
+        "description" : "获取子类下商品集合",
+        "operationId" : "/subCategory/goodsList/relation",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "会员id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登陆用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "subCategoryId",
+          "in" : "query",
+          "description" : "子类id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_34"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/relation/Category/subCategoryList" : {
+      "get" : {
+        "tags" : [ "Relation" ],
+        "summary" : "获取大类下子类集合",
+        "description" : "获取大类下子类集合",
+        "operationId" : "/Category/subCategoryList/relation",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "会员id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "当前后台登陆用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "subCategoryId",
+          "in" : "query",
+          "description" : "大类id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_35"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/file/upload" : {
+      "post" : {
+        "tags" : [ "Upload" ],
+        "summary" : "上传文件",
+        "operationId" : "file/upload/",
+        "consumes" : [ "multipart/form-data" ],
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "formData",
+          "description" : "当前登录用户id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "filename",
+          "in" : "formData",
+          "description" : "The file to upload.",
+          "required" : false,
+          "type" : "file"
+        }, {
+          "name" : "val",
+          "in" : "formData",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "formData",
+          "description" : "时间戳",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "fileType",
+          "in" : "formData",
+          "description" : "上传文件类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "fileExt",
+          "in" : "formData",
+          "description" : "文件后缀",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "上传成功，返回成功信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_36"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Community" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "cover" : {
+          "type" : "string"
+        },
+        "subTitle" : {
+          "type" : "string"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "lat" : {
+          "type" : "number"
+        },
+        "lon" : {
+          "type" : "number"
+        }
+      },
+      "description" : "圈子",
+      "example" : {
+        "cover" : "cover",
+        "summary" : "summary",
+        "subTitle" : "subTitle",
+        "name" : "name",
+        "icon" : "icon",
+        "lon" : 5.962133916683182377482808078639209270477294921875,
+        "id" : 0,
+        "time" : 6,
+        "content" : "content",
+        "lat" : 1.46581298050294517310021547018550336360931396484375
+      }
+    },
+    "Activity" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "price" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "priceUnit" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "cover" : {
+          "type" : "string"
+        },
+        "subTitle" : {
+          "type" : "string"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "startTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "endtTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "tags" : {
+          "type" : "string"
+        },
+        "webUrl" : {
+          "type" : "string",
+          "description" : "描述活动的网页"
+        },
+        "lat" : {
+          "type" : "number"
+        },
+        "lon" : {
+          "type" : "number"
+        },
+        "area" : {
+          "type" : "string",
+          "description" : "地区位置"
+        },
+        "limit" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "参加人数上限 0=不限制"
+        }
+      },
+      "description" : "活动",
+      "example" : {
+        "summary" : "summary",
+        "area" : "area",
+        "priceUnit" : 5,
+        "icon" : "icon",
+        "lon" : 9.301444243932575517419536481611430644989013671875,
+        "type" : 6,
+        "content" : "content",
+        "tags" : "tags",
+        "cover" : "cover",
+        "subTitle" : "subTitle",
+        "endtTime" : 2,
+        "price" : 1,
+        "webUrl" : "webUrl",
+        "name" : "name",
+        "limit" : 3,
+        "startTime" : 5,
+        "id" : 0,
+        "lat" : 7.061401241503109105224211816675961017608642578125
+      }
+    },
+    "ActivityTag" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "cover" : {
+          "type" : "string"
+        },
+        "subTitle" : {
+          "type" : "string"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "webUrl" : {
+          "type" : "string",
+          "description" : "描述活动的网页"
+        },
+        "lat" : {
+          "type" : "number"
+        },
+        "lon" : {
+          "type" : "number"
+        },
+        "area" : {
+          "type" : "string",
+          "description" : "地区位置"
+        },
+        "limit" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "参加人数上限 0=不限制"
+        }
+      },
+      "description" : "活动标签",
+      "example" : {
+        "summary" : "summary",
+        "area" : "area",
+        "icon" : "icon",
+        "lon" : 5.63737665663332876420099637471139430999755859375,
+        "content" : "content",
+        "cover" : "cover",
+        "subTitle" : "subTitle",
+        "webUrl" : "webUrl",
+        "name" : "name",
+        "limit" : 2,
+        "id" : 6,
+        "time" : 1,
+        "lat" : 5.962133916683182377482808078639209270477294921875
+      }
+    },
+    "Comment" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "cover" : {
+          "type" : "string"
+        },
+        "subTitle" : {
+          "type" : "string"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "lat" : {
+          "type" : "number"
+        },
+        "lon" : {
+          "type" : "number"
+        }
+      },
+      "description" : "评论",
+      "example" : {
+        "cover" : "cover",
+        "summary" : "summary",
+        "subTitle" : "subTitle",
+        "name" : "name",
+        "icon" : "icon",
+        "lon" : 5.962133916683182377482808078639209270477294921875,
+        "id" : 0,
+        "time" : 6,
+        "content" : "content",
+        "lat" : 1.46581298050294517310021547018550336360931396484375
+      }
+    },
+    "Topic" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "cover" : {
+          "type" : "string"
+        },
+        "subTitle" : {
+          "type" : "string"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "lat" : {
+          "type" : "number"
+        },
+        "lon" : {
+          "type" : "number"
+        }
+      },
+      "description" : "话题",
+      "example" : {
+        "cover" : "cover",
+        "summary" : "summary",
+        "subTitle" : "subTitle",
+        "name" : "name",
+        "icon" : "icon",
+        "lon" : 5.962133916683182377482808078639209270477294921875,
+        "id" : 0,
+        "time" : 6,
+        "content" : "content",
+        "lat" : 1.46581298050294517310021547018550336360931396484375
+      }
+    },
+    "Shuoshuo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "cover" : {
+          "type" : "string"
+        },
+        "subTitle" : {
+          "type" : "string"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "lat" : {
+          "type" : "number"
+        },
+        "lon" : {
+          "type" : "number"
+        }
+      },
+      "description" : "说说",
+      "example" : {
+        "cover" : "cover",
+        "summary" : "summary",
+        "subTitle" : "subTitle",
+        "name" : "name",
+        "icon" : "icon",
+        "lon" : 5.962133916683182377482808078639209270477294921875,
+        "id" : 0,
+        "time" : 6,
+        "content" : "content",
+        "lat" : 1.46581298050294517310021547018550336360931396484375
+      }
+    },
+    "Member" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "avatar" : {
+          "type" : "string"
+        },
+        "gender" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "level" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "phone" : {
+          "type" : "string"
+        },
+        "tags" : {
+          "type" : "string"
+        },
+        "birth" : {
+          "type" : "string"
+        },
+        "area" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "area" : "area",
+        "gender" : 6,
+        "level" : 1,
+        "phone" : "phone",
+        "name" : "name",
+        "birth" : "birth",
+        "id" : 0,
+        "avatar" : "avatar",
+        "tags" : "tags"
+      }
+    },
+    "Spec" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "价格"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "example" : {
+        "summary" : "summary",
+        "name" : "name",
+        "id" : 0,
+        "value" : 6,
+        "status" : 1
+      }
+    },
+    "Order" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "memberId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "goodsId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "value" : {
+          "type" : "number"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "memberName" : {
+          "type" : "string"
+        },
+        "goodsName" : {
+          "type" : "string"
+        },
+        "orderNo" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "orderNo" : "orderNo",
+        "goodsId" : 1,
+        "memberName" : "memberName",
+        "id" : 0,
+        "time" : 5,
+        "value" : 5.962133916683182377482808078639209270477294921875,
+        "goodsName" : "goodsName",
+        "memberId" : 6,
+        "status" : 2
+      }
+    },
+    "Banner" : {
+      "type" : "object",
+      "properties" : {
+        "cover" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "jumpid" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "weburl" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "cover" : "cover",
+        "weburl" : "weburl",
+        "id" : 6,
+        "type" : 0,
+        "jumpid" : 1,
+        "title" : "title"
+      }
+    },
+    "Msg" : {
+      "type" : "object",
+      "properties" : {
+        "title" : {
+          "type" : "string"
+        },
+        "subTitle" : {
+          "type" : "string"
+        },
+        "createTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "from" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "to" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "example" : {
+        "subTitle" : "subTitle",
+        "createTime" : 0,
+        "from" : 6,
+        "to" : 1,
+        "title" : "title"
+      }
+    },
+    "Goods" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "subTitle" : {
+          "type" : "string"
+        },
+        "showIcon" : {
+          "type" : "boolean"
+        },
+        "subCategoryId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "playCount" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "booksNumber" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "authorAvatar" : {
+          "type" : "string"
+        },
+        "authorName" : {
+          "type" : "string"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "number"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "example" : {
+        "summary" : "summary",
+        "icon" : "icon",
+        "subCategoryId" : 0,
+        "booksNumber" : 1,
+        "authorAvatar" : "authorAvatar",
+        "playCount" : 6,
+        "subTitle" : "subTitle",
+        "authorName" : "authorName",
+        "name" : "name",
+        "time" : 2,
+        "value" : 5.962133916683182377482808078639209270477294921875,
+        "showIcon" : true,
+        "status" : 5
+      }
+    },
+    "Feedback" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "example" : {
+        "id" : 0,
+        "time" : 6,
+        "title" : "title",
+        "type" : 5,
+        "status" : 1
+      }
+    },
+    "Recharge" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "0=等待 1=成功 2=失败 3=其他"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "serialNumber" : {
+          "type" : "string",
+          "description" : "支付平台产生的流水号"
+        },
+        "memberId" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "order_no" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "value" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "description" : "充值结果",
+      "example" : {
+        "msg" : "msg",
+        "order_no" : "order_no",
+        "code" : 0,
+        "serialNumber" : "serialNumber",
+        "time" : 5,
+        "type" : 6,
+        "value" : 5,
+        "memberId" : "memberId",
+        "status" : 1
+      }
+    },
+    "ErrorInfo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "example" : {
+        "id" : 0,
+        "time" : 6,
+        "title" : "title",
+        "type" : 5,
+        "status" : 1
+      }
+    },
+    "Icon" : {
+      "type" : "object",
+      "properties" : {
+        "icon" : {
+          "type" : "string"
+        },
+        "cover" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "跳转类型"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "jumpid" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "weburl" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "cover" : "cover",
+        "weburl" : "weburl",
+        "icon" : "icon",
+        "id" : 6,
+        "type" : 0,
+        "jumpid" : 1,
+        "title" : "title"
+      }
+    },
+    "Category" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "subCategory" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/SubCategoryItem"
+          }
+        }
+      },
+      "example" : {
+        "subCategory" : [ {
+          "showicon" : true,
+          "name" : "name",
+          "icon" : "icon",
+          "categoryId" : 0,
+          "status" : 6
+        }, {
+          "showicon" : true,
+          "name" : "name",
+          "icon" : "icon",
+          "categoryId" : 0,
+          "status" : 6
+        } ],
+        "name" : "name"
+      }
+    },
+    "Status" : {
+      "type" : "object",
+      "required" : [ "code", "msg" ],
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int64",
+          "example" : 200
+        },
+        "msg" : {
+          "type" : "string",
+          "example" : "ok"
+        }
+      },
+      "example" : {
+        "msg" : "ok",
+        "code" : 200
+      }
+    },
+    "InitData" : {
+      "type" : "object",
+      "properties" : {
+        "downloadUrl" : {
+          "type" : "string",
+          "example" : "http://www.google.com/google.apk"
+        },
+        "force" : {
+          "type" : "integer",
+          "format" : "int32",
+          "example" : 0
+        },
+        "number" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "msg" : {
+          "type" : "string",
+          "example" : "下载地址字段"
+        },
+        "extraInfo" : {
+          "$ref" : "#/definitions/InitData_extraInfo"
+        }
+      },
+      "example" : {
+        "msg" : "下载地址字段",
+        "number" : 0,
+        "downloadUrl" : "http://www.google.com/google.apk",
+        "force" : 0,
+        "extraInfo" : {
+          "specialUrl" : "specialUrl",
+          "aboutUsUrl" : "aboutUsUrl",
+          "versionUrl" : "versionUrl"
+        }
+      }
+    },
+    "SubCategoryItem" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "showicon" : {
+          "type" : "boolean"
+        },
+        "categoryId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "example" : {
+        "showicon" : true,
+        "name" : "name",
+        "icon" : "icon",
+        "categoryId" : 0,
+        "status" : 6
+      }
+    },
+    "InitModel" : {
+      "type" : "object",
+      "required" : [ "data", "status" ],
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Status"
+        },
+        "data" : {
+          "$ref" : "#/definitions/InitData"
+        }
+      },
+      "example" : {
+        "data" : {
+          "msg" : "下载地址字段",
+          "number" : 0,
+          "downloadUrl" : "http://www.google.com/google.apk",
+          "force" : 0,
+          "extraInfo" : {
+            "specialUrl" : "specialUrl",
+            "aboutUsUrl" : "aboutUsUrl",
+            "versionUrl" : "versionUrl"
+          }
+        },
+        "status" : {
+          "msg" : "ok",
+          "code" : 200
+        }
+      }
+    },
+    "Error" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "msg" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Response" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "msg" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "msg" : "msg",
+        "code" : 0
+      }
+    },
+    "Url" : {
+      "type" : "string"
+    },
+    "inline_response_200" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "orders" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ActivityTag"
+          }
+        }
+      },
+      "example" : {
+        "orders" : [ {
+          "summary" : "summary",
+          "area" : "area",
+          "icon" : "icon",
+          "lon" : 5.63737665663332876420099637471139430999755859375,
+          "content" : "content",
+          "cover" : "cover",
+          "subTitle" : "subTitle",
+          "webUrl" : "webUrl",
+          "name" : "name",
+          "limit" : 2,
+          "id" : 6,
+          "time" : 1,
+          "lat" : 5.962133916683182377482808078639209270477294921875
+        }, {
+          "summary" : "summary",
+          "area" : "area",
+          "icon" : "icon",
+          "lon" : 5.63737665663332876420099637471139430999755859375,
+          "content" : "content",
+          "cover" : "cover",
+          "subTitle" : "subTitle",
+          "webUrl" : "webUrl",
+          "name" : "name",
+          "limit" : 2,
+          "id" : 6,
+          "time" : 1,
+          "lat" : 5.962133916683182377482808078639209270477294921875
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_1" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/ActivityTag"
+        }
+      },
+      "example" : {
+        "data" : {
+          "summary" : "summary",
+          "area" : "area",
+          "icon" : "icon",
+          "lon" : 5.63737665663332876420099637471139430999755859375,
+          "content" : "content",
+          "cover" : "cover",
+          "subTitle" : "subTitle",
+          "webUrl" : "webUrl",
+          "name" : "name",
+          "limit" : 2,
+          "id" : 6,
+          "time" : 1,
+          "lat" : 5.962133916683182377482808078639209270477294921875
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_2" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        }
+      },
+      "example" : {
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_3" : {
+      "properties" : {
+        "return" : {
+          "$ref" : "#/definitions/Response"
+        }
+      },
+      "example" : {
+        "return" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_4" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "orders" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Activity"
+          }
+        }
+      },
+      "example" : {
+        "orders" : [ {
+          "summary" : "summary",
+          "area" : "area",
+          "priceUnit" : 5,
+          "icon" : "icon",
+          "lon" : 9.301444243932575517419536481611430644989013671875,
+          "type" : 6,
+          "content" : "content",
+          "tags" : "tags",
+          "cover" : "cover",
+          "subTitle" : "subTitle",
+          "endtTime" : 2,
+          "price" : 1,
+          "webUrl" : "webUrl",
+          "name" : "name",
+          "limit" : 3,
+          "startTime" : 5,
+          "id" : 0,
+          "lat" : 7.061401241503109105224211816675961017608642578125
+        }, {
+          "summary" : "summary",
+          "area" : "area",
+          "priceUnit" : 5,
+          "icon" : "icon",
+          "lon" : 9.301444243932575517419536481611430644989013671875,
+          "type" : 6,
+          "content" : "content",
+          "tags" : "tags",
+          "cover" : "cover",
+          "subTitle" : "subTitle",
+          "endtTime" : 2,
+          "price" : 1,
+          "webUrl" : "webUrl",
+          "name" : "name",
+          "limit" : 3,
+          "startTime" : 5,
+          "id" : 0,
+          "lat" : 7.061401241503109105224211816675961017608642578125
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_5" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "orders" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Member"
+          }
+        }
+      },
+      "example" : {
+        "orders" : [ {
+          "area" : "area",
+          "gender" : 6,
+          "level" : 1,
+          "phone" : "phone",
+          "name" : "name",
+          "birth" : "birth",
+          "id" : 0,
+          "avatar" : "avatar",
+          "tags" : "tags"
+        }, {
+          "area" : "area",
+          "gender" : 6,
+          "level" : 1,
+          "phone" : "phone",
+          "name" : "name",
+          "birth" : "birth",
+          "id" : 0,
+          "avatar" : "avatar",
+          "tags" : "tags"
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_6" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Activity"
+        }
+      },
+      "example" : {
+        "data" : {
+          "summary" : "summary",
+          "area" : "area",
+          "priceUnit" : 5,
+          "icon" : "icon",
+          "lon" : 9.301444243932575517419536481611430644989013671875,
+          "type" : 6,
+          "content" : "content",
+          "tags" : "tags",
+          "cover" : "cover",
+          "subTitle" : "subTitle",
+          "endtTime" : 2,
+          "price" : 1,
+          "webUrl" : "webUrl",
+          "name" : "name",
+          "limit" : 3,
+          "startTime" : 5,
+          "id" : 0,
+          "lat" : 7.061401241503109105224211816675961017608642578125
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_7" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "members" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Member"
+          }
+        }
+      },
+      "example" : {
+        "members" : [ {
+          "area" : "area",
+          "gender" : 6,
+          "level" : 1,
+          "phone" : "phone",
+          "name" : "name",
+          "birth" : "birth",
+          "id" : 0,
+          "avatar" : "avatar",
+          "tags" : "tags"
+        }, {
+          "area" : "area",
+          "gender" : 6,
+          "level" : 1,
+          "phone" : "phone",
+          "name" : "name",
+          "birth" : "birth",
+          "id" : 0,
+          "avatar" : "avatar",
+          "tags" : "tags"
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_8" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "orders" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Community"
+          }
+        }
+      },
+      "example" : {
+        "orders" : [ {
+          "cover" : "cover",
+          "summary" : "summary",
+          "subTitle" : "subTitle",
+          "name" : "name",
+          "icon" : "icon",
+          "lon" : 5.962133916683182377482808078639209270477294921875,
+          "id" : 0,
+          "time" : 6,
+          "content" : "content",
+          "lat" : 1.46581298050294517310021547018550336360931396484375
+        }, {
+          "cover" : "cover",
+          "summary" : "summary",
+          "subTitle" : "subTitle",
+          "name" : "name",
+          "icon" : "icon",
+          "lon" : 5.962133916683182377482808078639209270477294921875,
+          "id" : 0,
+          "time" : 6,
+          "content" : "content",
+          "lat" : 1.46581298050294517310021547018550336360931396484375
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_9" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Comment"
+        }
+      },
+      "example" : {
+        "data" : {
+          "cover" : "cover",
+          "summary" : "summary",
+          "subTitle" : "subTitle",
+          "name" : "name",
+          "icon" : "icon",
+          "lon" : 5.962133916683182377482808078639209270477294921875,
+          "id" : 0,
+          "time" : 6,
+          "content" : "content",
+          "lat" : 1.46581298050294517310021547018550336360931396484375
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_10" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Shuoshuo"
+        }
+      },
+      "example" : {
+        "data" : {
+          "cover" : "cover",
+          "summary" : "summary",
+          "subTitle" : "subTitle",
+          "name" : "name",
+          "icon" : "icon",
+          "lon" : 5.962133916683182377482808078639209270477294921875,
+          "id" : 0,
+          "time" : 6,
+          "content" : "content",
+          "lat" : 1.46581298050294517310021547018550336360931396484375
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_11" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "orders" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Topic"
+          }
+        }
+      },
+      "example" : {
+        "orders" : [ {
+          "cover" : "cover",
+          "summary" : "summary",
+          "subTitle" : "subTitle",
+          "name" : "name",
+          "icon" : "icon",
+          "lon" : 5.962133916683182377482808078639209270477294921875,
+          "id" : 0,
+          "time" : 6,
+          "content" : "content",
+          "lat" : 1.46581298050294517310021547018550336360931396484375
+        }, {
+          "cover" : "cover",
+          "summary" : "summary",
+          "subTitle" : "subTitle",
+          "name" : "name",
+          "icon" : "icon",
+          "lon" : 5.962133916683182377482808078639209270477294921875,
+          "id" : 0,
+          "time" : 6,
+          "content" : "content",
+          "lat" : 1.46581298050294517310021547018550336360931396484375
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_12" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Topic"
+        }
+      },
+      "example" : {
+        "data" : {
+          "cover" : "cover",
+          "summary" : "summary",
+          "subTitle" : "subTitle",
+          "name" : "name",
+          "icon" : "icon",
+          "lon" : 5.962133916683182377482808078639209270477294921875,
+          "id" : 0,
+          "time" : 6,
+          "content" : "content",
+          "lat" : 1.46581298050294517310021547018550336360931396484375
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_13" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Community"
+        }
+      },
+      "example" : {
+        "data" : {
+          "cover" : "cover",
+          "summary" : "summary",
+          "subTitle" : "subTitle",
+          "name" : "name",
+          "icon" : "icon",
+          "lon" : 5.962133916683182377482808078639209270477294921875,
+          "id" : 0,
+          "time" : 6,
+          "content" : "content",
+          "lat" : 1.46581298050294517310021547018550336360931396484375
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "body" : {
+      "properties" : {
+        "version" : {
+          "type" : "string"
+        },
+        "imei" : {
+          "type" : "string"
+        },
+        "client" : {
+          "type" : "string"
+        },
+        "ts" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "val" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "第三方类型 0=微信,1=微博,2=qq,3=手机号快捷登录,4=其他"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "登录返回信息"
+        },
+        "openid" : {
+          "type" : "string"
+        },
+        "avatar" : {
+          "type" : "string"
+        },
+        "smsCode" : {
+          "type" : "string"
+        },
+        "phone" : {
+          "type" : "string"
+        }
+      }
+    },
+    "inline_response_200_14" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Recharge"
+        }
+      },
+      "example" : {
+        "data" : {
+          "msg" : "msg",
+          "order_no" : "order_no",
+          "code" : 0,
+          "serialNumber" : "serialNumber",
+          "time" : 5,
+          "type" : 6,
+          "value" : 5,
+          "memberId" : "memberId",
+          "status" : 1
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_15" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "recharges" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Recharge"
+          }
+        }
+      },
+      "example" : {
+        "recharges" : [ {
+          "msg" : "msg",
+          "order_no" : "order_no",
+          "code" : 0,
+          "serialNumber" : "serialNumber",
+          "time" : 5,
+          "type" : 6,
+          "value" : 5,
+          "memberId" : "memberId",
+          "status" : 1
+        }, {
+          "msg" : "msg",
+          "order_no" : "order_no",
+          "code" : 0,
+          "serialNumber" : "serialNumber",
+          "time" : 5,
+          "type" : 6,
+          "value" : 5,
+          "memberId" : "memberId",
+          "status" : 1
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_16" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "orders" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Order"
+          }
+        }
+      },
+      "example" : {
+        "orders" : [ {
+          "orderNo" : "orderNo",
+          "goodsId" : 1,
+          "memberName" : "memberName",
+          "id" : 0,
+          "time" : 5,
+          "value" : 5.962133916683182377482808078639209270477294921875,
+          "goodsName" : "goodsName",
+          "memberId" : 6,
+          "status" : 2
+        }, {
+          "orderNo" : "orderNo",
+          "goodsId" : 1,
+          "memberName" : "memberName",
+          "id" : 0,
+          "time" : 5,
+          "value" : 5.962133916683182377482808078639209270477294921875,
+          "goodsName" : "goodsName",
+          "memberId" : 6,
+          "status" : 2
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "body_1" : {
+      "properties" : {
+        "version" : {
+          "type" : "string"
+        },
+        "imei" : {
+          "type" : "string"
+        },
+        "client" : {
+          "type" : "string"
+        },
+        "ts" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "val" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "支付厂家类型 0=支付宝,1=微信,3=appPay,4=银联,5=其他"
+        },
+        "value" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "memberId" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "inline_response_200_17" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "icons" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Icon"
+          }
+        }
+      },
+      "example" : {
+        "icons" : [ {
+          "cover" : "cover",
+          "weburl" : "weburl",
+          "icon" : "icon",
+          "id" : 6,
+          "type" : 0,
+          "jumpid" : 1,
+          "title" : "title"
+        }, {
+          "cover" : "cover",
+          "weburl" : "weburl",
+          "icon" : "icon",
+          "id" : 6,
+          "type" : 0,
+          "jumpid" : 1,
+          "title" : "title"
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_18" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Member"
+        }
+      },
+      "example" : {
+        "data" : {
+          "area" : "area",
+          "gender" : 6,
+          "level" : 1,
+          "phone" : "phone",
+          "name" : "name",
+          "birth" : "birth",
+          "id" : 0,
+          "avatar" : "avatar",
+          "tags" : "tags"
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "body_2" : {
+      "properties" : {
+        "version" : {
+          "type" : "string"
+        },
+        "imei" : {
+          "type" : "string"
+        },
+        "client" : {
+          "type" : "string"
+        },
+        "ts" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "val" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "反馈类型 0=账号问题,1=付费问题,2=播放问题,3=会员问题"
+        }
+      }
+    },
+    "body_3" : {
+      "properties" : {
+        "version" : {
+          "type" : "string"
+        },
+        "imei" : {
+          "type" : "string"
+        },
+        "client" : {
+          "type" : "string"
+        },
+        "ts" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "val" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        }
+      }
+    },
+    "inline_response_200_19" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Order"
+        }
+      },
+      "example" : {
+        "data" : {
+          "orderNo" : "orderNo",
+          "goodsId" : 1,
+          "memberName" : "memberName",
+          "id" : 0,
+          "time" : 5,
+          "value" : 5.962133916683182377482808078639209270477294921875,
+          "goodsName" : "goodsName",
+          "memberId" : 6,
+          "status" : 2
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_20" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "chapters" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Feedback"
+          }
+        }
+      },
+      "example" : {
+        "chapters" : [ {
+          "id" : 0,
+          "time" : 6,
+          "title" : "title",
+          "type" : 5,
+          "status" : 1
+        }, {
+          "id" : 0,
+          "time" : 6,
+          "title" : "title",
+          "type" : 5,
+          "status" : 1
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_21" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Feedback"
+        }
+      },
+      "example" : {
+        "data" : {
+          "id" : 0,
+          "time" : 6,
+          "title" : "title",
+          "type" : 5,
+          "status" : 1
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_22" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "errList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ErrorInfo"
+          }
+        }
+      },
+      "example" : {
+        "errList" : [ {
+          "id" : 0,
+          "time" : 6,
+          "title" : "title",
+          "type" : 5,
+          "status" : 1
+        }, {
+          "id" : 0,
+          "time" : 6,
+          "title" : "title",
+          "type" : 5,
+          "status" : 1
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_23" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/ErrorInfo"
+        }
+      },
+      "example" : {
+        "data" : {
+          "id" : 0,
+          "time" : 6,
+          "title" : "title",
+          "type" : 5,
+          "status" : 1
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_24" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "banners" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Banner"
+          }
+        }
+      },
+      "example" : {
+        "banners" : [ {
+          "cover" : "cover",
+          "weburl" : "weburl",
+          "id" : 6,
+          "type" : 0,
+          "jumpid" : 1,
+          "title" : "title"
+        }, {
+          "cover" : "cover",
+          "weburl" : "weburl",
+          "id" : 6,
+          "type" : 0,
+          "jumpid" : 1,
+          "title" : "title"
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_25" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Banner"
+        }
+      },
+      "example" : {
+        "data" : {
+          "cover" : "cover",
+          "weburl" : "weburl",
+          "id" : 6,
+          "type" : 0,
+          "jumpid" : 1,
+          "title" : "title"
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_26" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "msgList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Msg"
+          }
+        }
+      },
+      "example" : {
+        "msgList" : [ {
+          "subTitle" : "subTitle",
+          "createTime" : 0,
+          "from" : 6,
+          "to" : 1,
+          "title" : "title"
+        }, {
+          "subTitle" : "subTitle",
+          "createTime" : 0,
+          "from" : 6,
+          "to" : 1,
+          "title" : "title"
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_27" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Msg"
+        }
+      },
+      "example" : {
+        "data" : {
+          "subTitle" : "subTitle",
+          "createTime" : 0,
+          "from" : 6,
+          "to" : 1,
+          "title" : "title"
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_28" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "subCategoryList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/SubCategoryItem"
+          }
+        }
+      },
+      "example" : {
+        "subCategoryList" : [ {
+          "showicon" : true,
+          "name" : "name",
+          "icon" : "icon",
+          "categoryId" : 0,
+          "status" : 6
+        }, {
+          "showicon" : true,
+          "name" : "name",
+          "icon" : "icon",
+          "categoryId" : 0,
+          "status" : 6
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_29" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Category"
+        }
+      },
+      "example" : {
+        "data" : {
+          "subCategory" : [ {
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0,
+            "status" : 6
+          }, {
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0,
+            "status" : 6
+          } ],
+          "name" : "name"
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_30" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Goods"
+        }
+      },
+      "example" : {
+        "data" : {
+          "summary" : "summary",
+          "icon" : "icon",
+          "subCategoryId" : 0,
+          "booksNumber" : 1,
+          "authorAvatar" : "authorAvatar",
+          "playCount" : 6,
+          "subTitle" : "subTitle",
+          "authorName" : "authorName",
+          "name" : "name",
+          "time" : 2,
+          "value" : 5.962133916683182377482808078639209270477294921875,
+          "showIcon" : true,
+          "status" : 5
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_31" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "goodsList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Goods"
+          }
+        }
+      },
+      "example" : {
+        "goodsList" : [ {
+          "summary" : "summary",
+          "icon" : "icon",
+          "subCategoryId" : 0,
+          "booksNumber" : 1,
+          "authorAvatar" : "authorAvatar",
+          "playCount" : 6,
+          "subTitle" : "subTitle",
+          "authorName" : "authorName",
+          "name" : "name",
+          "time" : 2,
+          "value" : 5.962133916683182377482808078639209270477294921875,
+          "showIcon" : true,
+          "status" : 5
+        }, {
+          "summary" : "summary",
+          "icon" : "icon",
+          "subCategoryId" : 0,
+          "booksNumber" : 1,
+          "authorAvatar" : "authorAvatar",
+          "playCount" : 6,
+          "subTitle" : "subTitle",
+          "authorName" : "authorName",
+          "name" : "name",
+          "time" : 2,
+          "value" : 5.962133916683182377482808078639209270477294921875,
+          "showIcon" : true,
+          "status" : 5
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_32" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "goodsList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Spec"
+          }
+        }
+      },
+      "example" : {
+        "goodsList" : [ {
+          "summary" : "summary",
+          "name" : "name",
+          "id" : 0,
+          "value" : 6,
+          "status" : 1
+        }, {
+          "summary" : "summary",
+          "name" : "name",
+          "id" : 0,
+          "value" : 6,
+          "status" : 1
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_33" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Spec"
+        }
+      },
+      "example" : {
+        "data" : {
+          "summary" : "summary",
+          "name" : "name",
+          "id" : 0,
+          "value" : 6,
+          "status" : 1
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_34" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "goodsList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Category"
+          }
+        }
+      },
+      "example" : {
+        "goodsList" : [ {
+          "subCategory" : [ {
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0,
+            "status" : 6
+          }, {
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0,
+            "status" : 6
+          } ],
+          "name" : "name"
+        }, {
+          "subCategory" : [ {
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0,
+            "status" : 6
+          }, {
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0,
+            "status" : 6
+          } ],
+          "name" : "name"
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_35" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "subCategoryList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Category"
+          }
+        }
+      },
+      "example" : {
+        "subCategoryList" : [ {
+          "subCategory" : [ {
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0,
+            "status" : 6
+          }, {
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0,
+            "status" : 6
+          } ],
+          "name" : "name"
+        }, {
+          "subCategory" : [ {
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0,
+            "status" : 6
+          }, {
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0,
+            "status" : 6
+          } ],
+          "name" : "name"
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_36" : {
+      "properties" : {
+        "return" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "url" : {
+          "$ref" : "#/definitions/Url"
+        }
+      },
+      "example" : {
+        "return" : {
+          "msg" : "msg",
+          "code" : 0
+        },
+        "url" : { }
+      }
+    },
+    "InitData_extraInfo" : {
+      "properties" : {
+        "specialUrl" : {
+          "type" : "string"
+        },
+        "versionUrl" : {
+          "type" : "string"
+        },
+        "aboutUsUrl" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "specialUrl" : "specialUrl",
+        "aboutUsUrl" : "aboutUsUrl",
+        "versionUrl" : "versionUrl"
+      }
+    }
+  }
+}
