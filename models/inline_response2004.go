@@ -17,7 +17,7 @@ import (
 type InlineResponse2004 struct {
 
 	// orders
-	Orders InlineResponse2004Orders `json:"orders"`
+	Activities InlineResponse2004Orders `json:"activities"`
 
 	// status
 	Status *Response `json:"status,omitempty"`

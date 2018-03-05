@@ -7,8 +7,13 @@ package activity
 
 import (
 	"net/http"
-
+	_"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 	middleware "github.com/go-openapi/runtime/middleware"
+	"youbite/models"
+	"fmt"
+	"youbite/var"
+	_"strconv"
 )
 
 // NrActivityListHandlerFunc turns a function with the right signature into a activity list handler
@@ -53,8 +58,31 @@ func (o *NrActivityList) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	res := o.Handler.Handle(Params) // actually handle the request
+	var ok ActivityListOK
+	var response models.InlineResponse2004
+	var activityList models.InlineResponse2004Orders
+	//var count int64
 
-	o.Context.Respond(rw, r, route.Produces, route, res)
+	db,err := _var.OpenConnection()
+	if err!=nil{
+		fmt.Println(err.Error())
+	}
+	defer db.Close()
+	//query
+	//db.Table("recharge").Where(map[string]interface{}{"status":0}).Find(&rechargeList).Limit(*(Params.PageSize)).Offset(*(Params.PageIndex)*(*(Params.PageSize)))
+	db.Table("activities").Limit(*(Params.PageSize)).Offset(*(Params.PageIndex)*(*(Params.PageSize))).Find(&activityList)
+	//db.Table("msgs").Where("status=?",0).Count(&count)
+	//data
+	response.Activities = activityList
+	//fmt.Println("haspushed is",albumList[0].HasPushed)
+	//status
+	var status models.Response
+	status.UnmarshalBinary([]byte(_var.Response200(200,"ok")))
+	response.Status = &status
+	//response.Status.TotalCount = count
+
+	ok.SetPayload(&response)
+
+	o.Context.Respond(rw, r, route.Produces, route, ok)
 
 }

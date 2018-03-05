@@ -17,58 +17,60 @@ import (
 type Activity struct {
 
 	// 地区位置
-	Area string `json:"area,omitempty"`
+	Area string `json:"area"`
 
 	// content
-	Content string `json:"content,omitempty"`
+	Content string `json:"content"`
 
 	// cover
-	Cover string `json:"cover,omitempty"`
+	Cover string `json:"cover"`
 
 	// endt time
-	EndtTime int64 `json:"endtTime,omitempty"`
+	EndtTime int64 `json:"endtTime"`
 
 	// icon
-	Icon string `json:"icon,omitempty"`
+	Icon string `json:"icon"`
 
 	// id
-	ID int64 `json:"id,omitempty"`
+	ID int64 `json:"id"`
 
 	// lat
-	Lat float64 `json:"lat,omitempty"`
+	Lat float64 `json:"lat"`
 
 	// 参加人数上限 0=不限制
-	Limit int64 `json:"limit,omitempty"`
+	Limit int64 `json:"limit"`
 
 	// lon
-	Lon float64 `json:"lon,omitempty"`
+	Lon float64 `json:"lon"`
 
 	// name
-	Name string `json:"name,omitempty"`
+	Name string `json:"name"`
 
 	// price
-	Price int64 `json:"price,omitempty"`
+	Price int64 `json:"price"`
 
 	// price unit
-	PriceUnit int64 `json:"priceUnit,omitempty"`
+	PriceUnit int64 `json:"priceUnit"`
 
 	// start time
-	StartTime int64 `json:"startTime,omitempty"`
+	StartTime int64 `json:"startTime"`
 
 	// sub title
-	SubTitle string `json:"subTitle,omitempty"`
+	SubTitle string `json:"subTitle"`
 
 	// summary
-	Summary string `json:"summary,omitempty"`
+	Summary string `json:"summary"`
 
 	// tags
-	Tags string `json:"tags,omitempty"`
+	Tags string `json:"tags"`
 
 	// type
-	Type int64 `json:"type,omitempty"`
+	Type int64 `json:"type"`
 
 	// 描述活动的网页
-	WebURL string `json:"webUrl,omitempty"`
+	WebURL string `json:"webUrl"`
+
+	ViewCount int64 `json:"viewCount"`
 }
 
 // Validate validates this activity
